@@ -33,7 +33,7 @@ def redir():
     if urls[arg].startswith("http") or urls[arg].startswith("https"):
         return redirect(f"{urls[arg]}")
     else:
-        return redirect(f"https://{urls[arg]}")
+        return redirect(f"http://{urls[arg]}")
 
 
 if __name__ == '__main__':
