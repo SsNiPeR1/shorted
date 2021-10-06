@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>URL Shortener</title>
+	<meta charset="UTF-8">
+	<title>URL Shortener</title>
+	{% if session.get("theme") == "light" %}
+		<link rel="stylesheet" href={{ url_for('static', filename='css/lightstyle.css') }}>
+	{% else %}
+		<link rel="stylesheet" href={{ url_for('static', filename='css/style.css') }}>
+	{% endif %}
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7761166536277043"
+     crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7761166536277043"
+     crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>URL Shortener</h1>
-    <form action="" method="post">
-
-        {{ form.csrf_token() }}
-        {% for field in form if field.name != "csrf_token" %}
-            <p> {{ field.label() }} </p>
-
-            <p>
-                {{ field }}
-                {% for error in field.errors %}
-                    {{ error }}
-                {% endfor %}
-            </p>
-        {% endfor %}
-    </form>
+	<h1 class="whitetext">URL Shortener</h1>
+	<form action="" method="post" class="whitetext">
+		{{ form.csrf_token }}
+		<div>
+			{{ form.url }}{{ form.submit() }}
+		</div>
+		{{ form.recaptcha }}
+	</form>
+	<hr>
+	<div>
+		<button onclick="window.location.href='/changetheme'">Change theme</button>
+	</div>
 </body>
 </html>

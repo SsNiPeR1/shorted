@@ -1,0 +1,23 @@
+.whitetext {
+	color: #FFFFFF;
+}
+
+html {
+	background-color: #202020;
+}
+body {
+	text-align: center;
+}
+
+form {
+	display: inline-block;
+}
+
+button {
+	border-radius: 0px 30px 30px 0px;
+	border-left: 0;
+}
+
+#url {
+	border-right: 0;
+}

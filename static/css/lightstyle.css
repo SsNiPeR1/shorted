@@ -1,0 +1,14 @@
+.whitetext {
+	color: #000000;
+}
+
+html {
+	background-color: #FFFFFF;
+}
+body {
+	text-align: center;
+}
+
+form {
+	display: inline-block;
+}
